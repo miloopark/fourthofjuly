@@ -88,7 +88,7 @@ export function Countdown({ targetIso, size = "md", className }: Props) {
         <div key={label} className="flex flex-col items-center" aria-hidden="true">
           <div
             className={cn(
-              "relative overflow-hidden rounded-2xl md:rounded-3xl",
+              "relative flex items-center justify-center overflow-hidden rounded-2xl md:rounded-3xl",
               size === "hero"
                 ? "glass-dark text-white shadow-2xl shadow-black/40 ring-1 ring-white/10"
                 : "glass shadow-lg",
@@ -111,6 +111,10 @@ export function Countdown({ targetIso, size = "md", className }: Props) {
                 }}
                 className={cn(
                   "font-display font-bold tabular-nums tracking-tight",
+                  // Optical centering: Playfair's tall ascenders leave dead space
+                  // above glyphs. Tighten line-height + nudge baseline up so the
+                  // visual digit sits in the cell's true center.
+                  "leading-[0.78] translate-y-[0.04em]",
                   s.digit,
                   size === "hero" &&
                     "bg-gradient-to-b from-white via-white to-sunset-200 bg-clip-text text-transparent"

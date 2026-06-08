@@ -49,7 +49,7 @@ export function Hero() {
       {/* Main content */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-28 pb-12 text-center text-white md:pt-32"
+        className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-28 pb-24 text-center text-white md:pt-32 md:pb-28"
       >
         {/* Tagline pill */}
         <motion.div
@@ -150,7 +150,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/60 transition hover:text-white"
+        className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/50 transition hover:text-white"
         aria-label="Scroll down"
       >
         <span className="text-[10px] font-medium uppercase tracking-[0.3em]">
