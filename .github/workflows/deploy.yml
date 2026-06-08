@@ -34,8 +34,8 @@ jobs:
         env:
           REPO: ${{ github.repository }}
         run: |
-          # GitHub validates ${{ github.repository }} to "<owner>/<name>" with
-          # safe chars, but we still avoid direct ${{ }} interpolation in run:.
+          # Derive the repo name from the REPO env var (safer than direct
+          # expression interpolation into a shell command).
           name="${REPO##*/}"
           echo "name=$name" >>"$GITHUB_OUTPUT"
 
