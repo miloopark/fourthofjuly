@@ -24,14 +24,14 @@ export function Hero() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-midnight-900"
     >
-      {/* Mountain background */}
+      {/* Hero backdrop — custom group illustration */}
       <motion.div style={{ y: mountainY }} className="absolute inset-0 -z-20">
         <Image
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=65"
-          alt="Mountain range at sunset"
+          src="/homepage.png"
+          alt="The crew illustrated into a mountain lake scene"
           fill
           priority
-          quality={65}
+          quality={85}
           sizes="100vw"
           className="object-cover"
         />
