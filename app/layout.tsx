@@ -19,10 +19,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Poconos Mountains · July 3–5, 2026",
   description:
-    "12 Friends · Mountains · Lake Day · Campfires · Grill Night · Saturday Rager. One weekend. Countless memories.",
+    "10 Friends · Mountains · Lake Day · Campfires · Grill Night · Saturday Rager. One weekend. Countless memories.",
   openGraph: {
     title: "Poconos Mountains · July 3–5, 2026",
-    description: "One weekend. Twelve friends. Countless memories.",
+    description: "One weekend. Ten friends. Countless memories.",
     type: "website",
   },
 };

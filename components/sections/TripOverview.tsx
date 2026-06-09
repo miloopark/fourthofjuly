@@ -30,7 +30,7 @@ const STATS: StatCard[] = [
   },
   {
     label: "Group Size",
-    value: "12",
+    value: "10",
     sub: "Friends, one cabin",
     Icon: Users,
     accent: "from-sunset-400/30 via-sunset-500/10 to-transparent",
@@ -78,7 +78,7 @@ export function TripOverview() {
         <SectionHeading
           id="overview-title"
           eyebrow="The Trip"
-          title="One weekend, one cabin, twelve friends"
+          title="One weekend, one cabin, ten friends"
           subtitle="A long weekend in the Poconos built around lake days, campfires, and a Saturday night nobody will forget. Here's the shape of it."
         />
 

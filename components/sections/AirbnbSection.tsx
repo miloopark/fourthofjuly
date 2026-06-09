@@ -69,7 +69,7 @@ export function AirbnbSection() {
           id="airbnb-title"
           eyebrow="Where We're Staying"
           title="The Cabin"
-          subtitle="Luxury Airbnb in the Poconos Mountains — twelve beds, hot tub, fire pit, and a view."
+          subtitle="Luxury Airbnb in the Poconos Mountains — eight beds, hot tub, fire pit, and a view."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
@@ -133,7 +133,7 @@ export function AirbnbSection() {
 
               {/* Stats row */}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-stone-200/60 pb-5 dark:border-white/10">
-                <Stat value="12" label="guests" />
+                <Stat value="10" label="guests" />
                 <Divider />
                 <Stat value="6" label="bedrooms" />
                 <Divider />

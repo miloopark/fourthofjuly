@@ -15,13 +15,13 @@ type HeadlineLine = {
 
 const HEADLINE: HeadlineLine[] = [
   { text: "One Weekend." },
-  { text: "Twelve Friends.", accent: true },
+  { text: "Ten Friends.", accent: true },
   { text: "Countless Memories." },
 ];
 
 const STATS: Array<{ value: string; label: string; icon: React.ReactNode }> = [
   {
-    value: "12",
+    value: "10",
     label: "Friends",
     icon: <Users className="h-3.5 w-3.5" />,
   },
