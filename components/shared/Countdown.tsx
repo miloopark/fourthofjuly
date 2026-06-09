@@ -88,33 +88,39 @@ export function Countdown({ targetIso, size = "md", className }: Props) {
         <div key={label} className="flex flex-col items-center" aria-hidden="true">
           <div
             className={cn(
-              "relative flex items-center justify-center overflow-hidden rounded-2xl md:rounded-3xl",
+              "relative overflow-hidden rounded-2xl md:rounded-3xl",
               size === "hero"
                 ? "glass-dark text-white shadow-2xl shadow-black/40 ring-1 ring-white/10"
                 : "glass shadow-lg",
               s.box
             )}
           >
+            {/* Phantom sets the cell's intrinsic height; real digits float on top. */}
+            <span
+              aria-hidden="true"
+              className={cn(
+                "invisible block font-display font-bold tabular-nums tracking-tight leading-[0.78]",
+                s.digit
+              )}
+            >
+              00
+            </span>
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={value}
                 initial={
-                  prefersReduced ? { opacity: 1, y: 0 } : { y: "60%", opacity: 0 }
+                  prefersReduced ? { opacity: 1, y: 0 } : { y: "100%", opacity: 0 }
                 }
                 animate={{ y: 0, opacity: 1 }}
                 exit={
-                  prefersReduced ? { opacity: 0 } : { y: "-60%", opacity: 0 }
+                  prefersReduced ? { opacity: 0 } : { y: "-100%", opacity: 0 }
                 }
                 transition={{
                   duration: prefersReduced ? 0 : 0.35,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className={cn(
-                  "font-display font-bold tabular-nums tracking-tight",
-                  // Optical centering: Playfair's tall ascenders leave dead space
-                  // above glyphs. Tighten line-height + nudge baseline up so the
-                  // visual digit sits in the cell's true center.
-                  "leading-[0.78] translate-y-[0.04em]",
+                  "absolute inset-0 flex items-center justify-center font-display font-bold tabular-nums tracking-tight leading-[0.78]",
                   s.digit,
                   size === "hero" &&
                     "bg-gradient-to-b from-white via-white to-sunset-200 bg-clip-text text-transparent"
