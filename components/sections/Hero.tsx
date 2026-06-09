@@ -24,10 +24,13 @@ export function Hero() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-midnight-900"
     >
-      {/* Hero backdrop — custom group illustration */}
+      {/* Hero backdrop — custom group illustration.
+       * With `images: { unoptimized: true }` (required for GH Pages static
+       * export), next/image does NOT auto-prepend basePath, so we do it
+       * explicitly from the same env var that drives next.config.mjs. */}
       <motion.div style={{ y: mountainY }} className="absolute inset-0 -z-20">
         <Image
-          src="/homepage.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/homepage.png`}
           alt="The crew illustrated into a mountain lake scene"
           fill
           priority
