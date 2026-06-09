@@ -9,31 +9,35 @@ type Props = {
   className?: string;
 };
 
+// IMPORTANT: keep `leading-*` OUT of `digit` strings. The motion.div sets its
+// own line-height via cn() at the end so tailwind-merge keeps it. Putting
+// `leading-none` here gets twMerge'd onto the cell and overrides the optical
+// centering hint we apply at the usage site.
 const sizeStyles = {
   sm: {
     digit: "text-2xl md:text-3xl",
     label: "text-[10px]",
-    box: "px-3 py-2 min-w-[3.5rem]",
+    box: "aspect-square min-w-[3.5rem]",
     gap: "gap-2",
   },
   md: {
     digit: "text-4xl md:text-5xl",
     label: "text-xs",
-    box: "px-4 py-3 min-w-[5rem]",
+    box: "aspect-square min-w-[5rem]",
     gap: "gap-3",
   },
   lg: {
     digit: "text-5xl md:text-6xl lg:text-7xl",
     label: "text-sm",
-    box: "px-5 py-4 min-w-[6rem]",
+    box: "aspect-square min-w-[6rem]",
     gap: "gap-4",
   },
   hero: {
     digit:
-      "text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[10rem] leading-none",
+      "text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[10rem]",
     label:
       "text-[10px] tracking-[0.12em] sm:text-xs sm:tracking-[0.18em] md:text-sm md:tracking-[0.25em]",
-    box: "px-2.5 sm:px-6 md:px-8 py-3 md:py-6 min-w-[4.25rem] sm:min-w-[7rem] md:min-w-[10rem] lg:min-w-[12rem]",
+    box: "aspect-square min-w-[4.25rem] sm:min-w-[7rem] md:min-w-[10rem] lg:min-w-[12rem]",
     gap: "gap-1.5 sm:gap-3 md:gap-5",
   },
 };
@@ -95,16 +99,6 @@ export function Countdown({ targetIso, size = "md", className }: Props) {
               s.box
             )}
           >
-            {/* Phantom sets the cell's intrinsic height; real digits float on top. */}
-            <span
-              aria-hidden="true"
-              className={cn(
-                "invisible block font-display font-bold tabular-nums tracking-tight leading-[0.78]",
-                s.digit
-              )}
-            >
-              00
-            </span>
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={value}
@@ -119,9 +113,12 @@ export function Countdown({ targetIso, size = "md", className }: Props) {
                   duration: prefersReduced ? 0 : 0.35,
                   ease: [0.22, 1, 0.36, 1],
                 }}
+                // Order matters: s.digit (no leading-*) first, then our
+                // optical-centering leading + nudge so tailwind-merge keeps them.
                 className={cn(
-                  "absolute inset-0 flex items-center justify-center font-display font-bold tabular-nums tracking-tight leading-[0.78]",
+                  "absolute inset-0 flex items-center justify-center font-display font-bold tabular-nums tracking-tight",
                   s.digit,
+                  "leading-[0.78] translate-y-[0.04em]",
                   size === "hero" &&
                     "bg-gradient-to-b from-white via-white to-sunset-200 bg-clip-text text-transparent"
                 )}
