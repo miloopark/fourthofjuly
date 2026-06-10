@@ -1,9 +1,9 @@
 export const TRIP = {
   name: "Poconos Mountains",
-  tagline: "10 Friends · Mountains · Lake Day · Campfires · Grill Night · Saturday Rager",
+  tagline: "12 Friends · Mountains · Lake Day · Campfires · Grill Night · Saturday Rager",
   startDate: "2026-07-03T15:00:00-04:00",
   endDate: "2026-07-05T11:00:00-04:00",
-  groupSize: 10,
+  groupSize: 12,
   location: "Poconos Mountains, Pennsylvania",
   airbnbUrl:
     "https://www.airbnb.com/rooms/748035530634426073?adults=12&check_in=2026-07-03&check_out=2026-07-05",
@@ -22,6 +22,8 @@ export const PARTICIPANTS = [
   { name: "Sophia", role: "Asexual", emoji: "🧊" },
   { name: "Sav", role: "Temu Nina Lin", emoji: "🪩" },
   { name: "Derek", role: "Loverboy", emoji: "💘" },
+  { name: "David", role: "Beat Goliath", emoji: "🪨" },
+  { name: "Momo", role: "LPGA 2026 Champ", emoji: "🏆" },
 ];
 
 export const HIGHLIGHTS = [
@@ -332,9 +334,9 @@ export const SHOPPING = [
 ];
 
 export const COSTS = [
-  { label: "Airbnb", total: 1900, perPerson: 190, color: "#10b981" },
-  { label: "Groceries / Drinks / Firewood", total: 300, perPerson: 30, color: "#f97316" },
-  { label: "Gas Contribution", total: 180, perPerson: 18, color: "#06b6d4" },
+  { label: "Airbnb", total: 1900, perPerson: 159, color: "#10b981" },
+  { label: "Groceries / Drinks / Firewood", total: 300, perPerson: 25, color: "#f97316" },
+  { label: "Gas Contribution", total: 180, perPerson: 15, color: "#06b6d4" },
 ];
 
 export const GROUP_ROLES = [
@@ -360,7 +362,7 @@ export const FAQ = [
   },
   {
     q: "What's the cost per person?",
-    a: "Approximately $238 per person all-in: ~$190 Airbnb, ~$30 food/drink/firewood, ~$18 gas contribution.",
+    a: "Approximately $199 per person all-in: ~$159 Airbnb, ~$25 food/drink/firewood, ~$15 gas contribution.",
   },
   {
     q: "What about the optional Friday-night experience?",

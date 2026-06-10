@@ -109,7 +109,7 @@ export function Hero() {
             <Calendar className="h-4 w-4" aria-hidden="true" /> Jul 3 – Jul 5
           </span>
           <span className="inline-flex items-center gap-2">
-            <Users className="h-4 w-4" aria-hidden="true" /> 10 Friends
+            <Users className="h-4 w-4" aria-hidden="true" /> 12 Friends
           </span>
           <span className="inline-flex items-center gap-2">
             <MapPin className="h-4 w-4" aria-hidden="true" /> Poconos, PA

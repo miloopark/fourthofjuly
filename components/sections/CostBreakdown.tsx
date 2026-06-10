@@ -176,8 +176,8 @@ export function CostBreakdown() {
         <SectionHeading
           id="costs-title"
           eyebrow="The Damage"
-          title="~$238 per person, all in"
-          subtitle="Split ten ways. Venmo Milo before Friday."
+          title="~$199 per person, all in"
+          subtitle="Split twelve ways. Venmo Milo before Friday."
         />
 
         {/* Top split: cards (left) + pie (right) */}

@@ -133,7 +133,7 @@ export function AirbnbSection() {
 
               {/* Stats row */}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-stone-200/60 pb-5 dark:border-white/10">
-                <Stat value="10" label="guests" />
+                <Stat value="12" label="guests" />
                 <Divider />
                 <Stat value="6" label="bedrooms" />
                 <Divider />

@@ -39,7 +39,7 @@ export function Participants() {
         <SectionHeading
           id="participants-title"
           eyebrow="The Crew"
-          title="Ten friends, one weekend"
+          title="Twelve friends, one weekend"
           subtitle={
             remaining > 0
               ? `Meet the people making this trip what it is. (${remaining} more ${remaining === 1 ? "spot" : "spots"} filling in soon.)`
